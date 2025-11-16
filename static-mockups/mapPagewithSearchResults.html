@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Stores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="menu-bar">
+        <a href="homepage.html"><img src="img/favicon.png" class="nav-bar-logo" alt="Grocery Guardians logo"/></a>
+        <div class="nav-tabs">
+            <a href="homepage.html">Home</a>
+            <a href="defaultMapPage.html">Grocery Stores</a>
+        </div>
+    </nav>
+    <header>
+        <div class="map-page-header">
+            <h1>Price Comparison Map</h1>
+        </div>
+    </header>
+    <main>
+        <section id="About">
+            <div class="about-container">
+                <div class="about">
+                    <h2>About</h2>
+                    <p>The map feature is an intuitive tool designed to enhance your grocery shopping experience by helping you find the best deals and the nearest grocery stores. This map was created using the public <a href="https://developer.kroger.com/reference">Kroger APIs</a> and the <a href="https://developers.google.com/maps/apis-by-platformGoogle">Google Maps API</a> to visualize the grocery item price information geographically for Kroger owned grocery stores, such as Quality Food Center (QFC) and Fred Meyer. Each grocery store is displayed with a marker on the map. Clicking on map marker provides additional grocery store details and/or item price.</p>
+                </div>
+            </div>
+        </section>
+        <section id="How-to-Use">
+            <div class="how-to-use-container">
+                <div class="how-to-use">
+                    <h2>How to Use</h2>
+                    <ul>
+                        <li><span class="bold-term">Item:</span> Enter the item name (general terms like milk, apples, flour etc. are okay) </li>
+                        <li><span class="bold-term">Location:</span> Type in a 5-digit U.S. Zip Code</li>
+                        <li><span class="bold-term">Search Radius:</span> Use the dropdown list to choose the number of miles within which you want to search for grocery stores</li>
+                        <li><span class="bold-term">Filter Results:</span> Review the list of items that match your search term and can be found at local grocery stores</li>
+                        <li><span class="bold-term">Select Items</span> Choose at least one item from the provided list</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="Map">
+            <div class="search-form-container">
+                <form class="row g-3">
+                    <div class="col-12">
+                      <input type="text" class="form-control" id="search" placeholder="Search for grocery item...">
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="location" placeholder="Enter 5 digit U.S. Zip Code">
+                    </div>
+                    <div class="col-md-4">
+                      <select id="radius-of" class="form-select">
+                        <option selected>Search Radius...</option>
+                        <option value="5-Miles">5 Miles</option>
+                        <option value="10-Miles">10 Miles</option>
+                        <option value="15-Miles">15 Miles</option>
+                        <option value="20-Miles">20 Miles</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-outline-success">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+            <div class="search-form-results-container">
+                <div class="search-form-results">
+                    <p>Please select from the following items available:</p>
+                    <div class="form-check form-check-inline checkbox-container" >
+                        <img src="img/fairlife-fat-free-milk.png" alt="Fairlife Fat Free Milk">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Fairlife Fat Free Lactose Free & High-Protein Ultra-Filtered Milk</label>
+                    </div>
+                    <div class="form-check form-check-inline checkbox-container">
+                        <img src="img/simply-organic-fat-free-milk.png" alt="Simple Organic Fat Free Milk">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Simple Truth Organic Fat Free Milk</label>
+                    </div>
+                    <div class="form-check form-check-inline checkbox-container">
+                        <img src="img/organic-valley-fat-free-milk.png" alt="Organic Valley Fat Free Milk">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox2">Organic Valley Fat Free Milk</label>
+                    </div>
+                    <div class="form-check form-check-inline checkbox-container">
+                        <img src="img/darigold-zero-fat-free-milk.png" alt="Darigold Zero Fat Free Milk">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                        <label class="form-check-label" for="inlineCheckbox2">Darigold Zero Fat Free Milk</label>
+                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <div class="image-container">
+                    <img src="img/map.png" alt="Grocery Store Map">
+                </div>
+            </div>
+        </section>
+        <section id="Results-List">
+            <div class="results-container">
+                <h2>Results</h2>
+                <div class="results-item-container">
+                    <div class="results-image">
+                        <img src="img/organic-valley-fat-free-milk.png" alt="Organic Valley Fat Free Milk">
+                    </div>
+                    <div class="results-item-info">
+                        <h3>Organic Valley Fat Free Milk</h3>
+                        <p>Price: $5.49</p>
+                        <div class="discount">
+                            <p>Save 50¢ when you buy 6 or more</p>
+                        </div>
+                        <h4>Quality Food Center - Broadway Market</h4>
+                    </div>
+                </div>
+                <!--- no discount -->
+                <div class="results-item-container">
+                    <div class="results-image">
+                        <img src="img/organic-valley-fat-free-milk.png" alt="Organic Valley Fat Free Milk">
+                    </div>
+                    <div class="results-item-info">
+                        <h3>ITEM NAME</h3>
+                        <p>Price: </p>
+                        <h4> Store: Name<h4>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 - Grocery Guardians, Inc. All rights reserved.</p>
+        <p>Diana Tran | Militha Madur | Mercedes Ro | Sonia Yeh</p>
+    </footer>
+</body>
+</html>
